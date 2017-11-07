@@ -88,41 +88,29 @@ describe('aplication logic', () => {
   describe('vote', () => {
     it('creates a tally for the voted entry', () => {
       const state = Map({
-        vote: Map({
-          pair: List.of('movie 1', 'movie 2')
-        }),
-        entries: List.of('movie 3')
+        pair: List.of('movie 1', 'movie 2')
       });
       const newState = vote(state, 'movie 1');
       expect(newState).to.equal(Map({
-        vote: Map({
-          pair: List.of('movie 1', 'movie 2'),
-          tally: Map({
-            'movie 1': 1
-          })
-        }),
-        entries: List.of('movie 3')
+        pair: List.of('movie 1', 'movie 2'),
+        tally: Map({
+          'movie 1': 1
+        })
       }));
     });
     it('adds to the existing tally for the voted entry', () => {
       const state = Map({
-        vote: Map({
-          pair: List.of('movie 1', 'movie 2'),
-          tally: Map({
-            'movie 1': 1
-          })
-        }),
-        entries: List.of('movie 3')
+        pair: List.of('movie 1', 'movie 2'),
+        tally: Map({
+          'movie 1': 1
+        })
       });
       const newState = vote(state, 'movie 1');
       expect(newState).to.equal(Map({
-        vote: Map({
-          pair: List.of('movie 1', 'movie 2'),
-          tally: Map({
-            'movie 1': 2
-          })
-        }),
-        entries: List.of('movie 3')
+        pair: List.of('movie 1', 'movie 2'),
+        tally: Map({
+          'movie 1': 2
+        })
       }));
     });
   });  

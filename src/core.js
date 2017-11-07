@@ -32,5 +32,5 @@ function getWinners(vote) {
 }
 
 export function vote(state, movie) {
-  return state.updateIn(['vote', 'tally', movie], 0, tally => tally + 1);
+  return state.updateIn(['tally', movie], 0, tally => tally + 1);
 }

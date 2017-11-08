@@ -19,7 +19,8 @@
     "mocha": "^4.0.1"
   },
   "dependencies": {
-    "immutable": "^3.8.2"
+    "immutable": "^3.8.2",
+    "redux": "^3.7.2",
   },
   "babel": {
     "presets": ["es2015"]

@@ -3,9 +3,10 @@ import Server from 'socket.io';
 export default function startServer(store) {
   const io = new Server().attach(8090);
 
-  store.subscribe(() => io.emit('state', store.getState().toJs()));
+  store.subscribe(() => io.emit('state', store.getState().toJS()));
 
   io.on('connection', (socket) => {
-    socket.emit('state', store.getState().toJs());
+    socket.emit('state', store.getState().toJS());
+    socke.on('action', store.dipatch.bind(store));
   });
 }
